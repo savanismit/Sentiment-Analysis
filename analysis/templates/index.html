@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+    {% block body %}
+	<div class="container">
+    <div class="row justify-content-left">
+    <div class="col-md-6">
+    <div class="card">
+    
+    <h4 class="card-header info-color text-center py-4">
+	<strong>Enter Details</strong></h4>
+
+    <article class="card-body">
+        <form class="text-center" style="color: #757575;" method = "POST">
+            <div class="form-group">
+	    		<input type="text" class="form-control" name = "topic" placeholder="Topic">
+			</div>   
+			<div class="form-group">
+	    		<input type="text" class="form-control" name = "no" placeholder="Number of Tweets">
+			</div>
+            <div class="form-group text-left col-md-6">
+				<label>Dates</label>
+	    		<label>From :-</label>   
+                <input type="text" class="form-control" name = "from" placeholder="YYYY-MM-DD">
+			</div>
+            <div class="form-group text-left col-md-6">
+                <label>Dates</label>
+	    		<label>To :-</label>
+	    		<input type="text" class="form-control" name = "to" placeholder="YYYY-MM-DD">
+			</div>   
+    		<div class="form-group">
+        		<button type="submit" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0">Submit</button>
+    		</div>
+        </form>
+    </article>
+        </div> </div> 
+
+	{% if result %}
+		<div class="col-md-6">
+        <div class="card card2">
+		<h4 class="card-header info-color text-center py-4">
+		<strong>{{result}}</strong></h4>
+		
+		<article class="card-body2"> 
+			<img class ="card-image img-fluid" alt="Output Graph" src="{{ url_for('static', filename='image/graph.png') }}"></img>
+		</article>
+		</div> </div> </div> </div>   
+	{% else %}   
+		</div></div>
+	{% endif %} 
+
+	<footer class="footer-section bg-dark">
+	<span style="color:white">
+	<div class="section-5 text-center">
+		<h4 class="my3" style="margin-top:3%;">This is Sentiment Analyzer for Tweeter!</h4>
+		<h4 class="my4">Know More About Me.</h4>
+	</div>
+	<div class="social" style="margin:1%;">
+		<div class="d-flex flex-row justify-content-center">
+			<!--Linkedin -->
+			<a class="i" href="https://www.linkedin.com/in/smit-savani/">
+				<i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+			</a>
+			<!--Instagram-->
+			<a class="i" href="https://www.instagram.com/smit_savani_/">
+				<i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+			</a>
+			<!--Github-->
+			<a class="i" href="https://github.com/savanismit">
+				<i class="fab fa-github fa-lg white-text fa-2x"> </i>
+			</a>
+		</div>
+	</div>
+	<hr>
+	<div class="footer-copyright text-center py-2">© 2020 Copyright:
+		<a href="#"><h9 style="color:lightseagreen">InfoAlpha.com</h5></a>
+	</div></span>      
+	</footer>                                      
+    {% endblock  %}
